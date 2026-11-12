@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SysWiki - macOS</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/lupa 2.jpg" type="image/jpeg">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="img/linuxwindows.webp" alt="Logo SysWiki" class="logo-img">
+            <h1>SysWiki: Repositorio de Comandos</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="linux.html">Linux</a></li>
+                <li><a href="windows.html">Windows</a></li>
+                <li><a href="kali.html">Kali Linux</a></li>
+                <li><a href="macos.html" class="active">macOS</a></li>
+                <li><a href="logs.html">Diagnóstico y Logs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <img src="img/Mac OS Logo.jpg" alt="Logo macOS" class="os-logo" style="max-width: 60px; border-radius: 50%;">
+            <h2>macOS: Entorno Darwin y Terminal Unix</h2>
+            <p>Guía de comandos esenciales para la administración de sistemas basados en Darwin, control de paquetes, gestión de servicios y diagnóstico en equipos Apple.</p>
+        </section>
+
+        <section class="search-section">
+            <form id="search-form">
+                <label for="search-input">Buscar comando de macOS:</label>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Ej. brew, defaults, diskutil, pmset...">
+                </div>
+            </form>
+        </section>
+
+        <section class="table-section">
+            <table class="command-table" id="table-commands">
+                <thead>
+                    <tr>
+                        <th scope="col">Comando</th>
+                        <th scope="col">Descripción / Propósito</th>
+                        <th scope="col">Categoría / Uso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>brew install [paquete]</code></td>
+                        <td>Instala, actualiza y gestiona aplicaciones y herramientas CLI mediante el gestor Homebrew.</td>
+                        <td>Gestión de Paquetes</td>
+                    </tr>
+                    <tr>
+                        <td><code>brew update && brew upgrade</code></td>
+                        <td>Actualiza el repositorio local de Homebrew y todas las fórmulas/casks instaladas.</td>
+                        <td>Gestión de Paquetes</td>
+                    </tr>
+                    <tr>
+                        <td><code>defaults write com.apple.finder AppleShowAllFiles TRUE</code></td>
+                        <td>Muestra los archivos y carpetas ocultas en el Finder de macOS.</td>
+                        <td>Configuración del Sistema</td>
+                    </tr>
+                    <tr>
+                        <td><code>killall Finder</code></td>
+                        <td>Reinicia el proceso del Finder para aplicar cambios visuales o de configuración pendientes.</td>
+                        <td>Gestión de Procesos</td>
+                    </tr>
+                    <tr>
+                        <td><code>pmset -g</code></td>
+                        <td>Muestra los estados actuales de energía, ahorro de batería y rendimiento del sistema.</td>
+                        <td>Energía / Hardware</td>
+                    </tr>
+                    <tr>
+                        <td><code>diskutil list</code></td>
+                        <td>Lista todos los discos, volúmenes y particiones físicas o virtuales conectadas al equipo.</td>
+                        <td>Almacenamiento</td>
+                    </tr>
+                    <tr>
+                        <td><code>diskutil verifyVolume /</code></td>
+                        <td>Verifica la integridad del sistema de archivos en el volumen de arranque principal.</td>
+                        <td>Almacenamiento</td>
+                    </tr>
+                    <tr>
+                        <td><code>top -o cpu</code></td>
+                        <td>Muestra los procesos activos del sistema ordenados dinámicamente por su consumo de CPU.</td>
+                        <td>Monitoreo</td>
+                    </tr>
+                    <tr>
+                        <td><code>sw_vers</code></td>
+                        <td>Muestra información detallada sobre la versión exacta de macOS instalada y el número de compilación.</td>
+                        <td>Información del Sistema</td>
+                    </tr>
+                    <tr>
+                        <td><code>system_profiler SPHardwareDataType</code></td>
+                        <td>Despliega un reporte completo del hardware físico (procesador, memoria, número de serie).</td>
+                        <td>Diagnóstico de Hardware</td>
+                    </tr>
+                    <tr>
+                        <td><code>networksetup -listallhardwareports</code></td>
+                        <td>Lista todas las interfaces de red físicas y virtuales de la Mac con sus direcciones MAC.</td>
+                        <td>Redes</td>
+                    </tr>
+                    <tr>
+                        <td><code>dscacheutil -flushcache && sudo killall -HUP mDNSResponder</code></td>
+                        <td>Limpia y vacía la caché DNS del sistema operativo para resolver fallos de resolución de red.</td>
+                        <td>Redes</td>
+                    </tr>
+                    <tr>
+                        <td><code>launchctl list</code></td>
+                        <td>Muestra todos los daemons y agentes cargados en el sistema mediante el gestor de servicios Launchd.</td>
+                        <td>Servicios del Sistema</td>
+                    </tr>
+                    <tr>
+                        <td><code>open [archivo_o_carpeta]</code></td>
+                        <td>Abre un archivo, directorio o aplicación utilizando la misma interfaz predeterminada del Finder.</td>
+                        <td>Navegación / Archivos</td>
+                    </tr>
+                    <tr>
+                        <td><code>pbcopy < [archivo]</code></td>
+                        <td>Copia el contenido directo de un archivo de texto al portapapeles del sistema (Clipboard).</td>
+                        <td>Utilidades de Terminal</td>
+                    </tr>
+                    <tr>
+                        <td><code>pbpaste > [archivo]</code></td>
+                        <td>Pega el contenido actual del portapapeles directamente dentro de un archivo de texto.</td>
+                        <td>Utilidades de Terminal</td>
+                    </tr>
+                    <tr>
+                        <td><code>caffeinate</code></td>
+                        <td>Impide temporalmente que el equipo Mac entre en modo de suspensión o ahorro de energía.</td>
+                        <td>Control de Sesión</td>
+                    </tr>
+                    <tr>
+                        <td><code>softwareupdate -l</code></td>
+                        <td>Busca en segundo plano actualizaciones de software y parches de seguridad pendientes para macOS.</td>
+                        <td>Actualizaciones</td>
+                    </tr>
+                    <tr>
+                        <td><code>mdfind [término]</code></td>
+                        <td>Realiza una búsqueda ultrarrápida indexada por Spotlight directamente desde la línea de comandos.</td>
+                        <td>Búsqueda de Archivos</td>
+                    </tr>
+                    <tr>
+                        <td><code>security find-generic-password -s [servicio] -a [usuario] -w</code></td>
+                        <td>Recupera credenciales o contraseñas almacenadas de forma segura en el Llavero (Keychain) de macOS.</td>
+                        <td>Seguridad</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SysWiki - Proyecto de Desarrollo Basado en Plataformas | Universidad Técnica de Manabí</p>
+    </footer>
+
+    <script src="js/codigo.js"></script>
+</body>
+</html>

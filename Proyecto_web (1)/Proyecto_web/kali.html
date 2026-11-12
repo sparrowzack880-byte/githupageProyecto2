@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SysWiki - Kali Linux</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/lupa 2.jpg" type="image/jpeg">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="img/kali Logo.png" alt="Logo SysWiki" class="logo-img">
+            <h1>SysWiki: Repositorio de Comandos</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="linux.html">Linux</a></li>
+                <li><a href="windows.html">Windows</a></li>
+                <li><a href="kali.html" class="active">Kali Linux</a></li>
+                <li><a href="macos.html">macOS</a></li>
+                <li><a href="logs.html">Diagnóstico y Logs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <img src="img/logo linux.png" alt="Logo Kali Linux" class="os-logo">
+            <h2>Kali Linux: Ciberseguridad y Hacking Ético</h2>
+            <p>Guía de comandos fundamentales para auditoría de redes, análisis de vulnerabilidades, seguridad ofensiva y pruebas de penetración.</p>
+        </section>
+
+        <section class="search-section">
+            <form id="search-form">
+                <label for="search-input">Buscar comando de Kali Linux:</label>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Ej. nmap, wireshark, hydra, sqlmap...">
+                </div>
+            </form>
+        </section>
+
+        <section class="table-section">
+            <table class="command-table" id="table-commands">
+                <thead>
+                    <tr>
+                        <th scope="col">Comando</th>
+                        <th scope="col">Descripción / Propósito</th>
+                        <th scope="col">Categoría / Uso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>nmap -sV [IP]</code></td>
+                        <td>Escaneo de puertos y detección de versiones de servicios activos en el objetivo.</td>
+                        <td>Escaneo de Redes</td>
+                    </tr>
+                    <tr>
+                        <td><code>nmap -A [IP]</code></td>
+                        <td>Escaneo agresivo que incluye detección de sistema operativo, versiones y scripts automáticos.</td>
+                        <td>Escaneo de Redes</td>
+                    </tr>
+                    <tr>
+                        <td><code>wireshark</code></td>
+                        <td>Inicia el analizador de tráfico de red en tiempo real mediante interfaz gráfica.</td>
+                        <td>Análisis de Paquetes</td>
+                    </tr>
+                    <tr>
+                        <td><code>tcpdump -i eth0</code></td>
+                        <td>Captura y muestra el tráfico de red directamente desde la terminal (sniffer).</td>
+                        <td>Análisis de Paquetes</td>
+                    </tr>
+                    <tr>
+                        <td><code>airmon-ng start wlan0</code></td>
+                        <td>Activa el modo monitor en la interfaz de red inalámbrica para auditorías Wi-Fi.</td>
+                        <td>Seguridad Inalámbrica</td>
+                    </tr>
+                    <tr>
+                        <td><code>airodump-ng wlan0mon</code></td>
+                        <td>Captura paquetes y detecta redes Wi-Fi cercanas con sus BSSID y clientes conectados.</td>
+                        <td>Seguridad Inalámbrica</td>
+                    </tr>
+                    <tr>
+                        <td><code>hydra -l [user] -P [dict.txt] [IP] [servicio]</code></td>
+                        <td>Herramienta de pruebas de fuerza bruta modular contra servicios como SSH, FTP o HTTP.</td>
+                        <td>Auditoría de Contraseñas</td>
+                    </tr>
+                    <tr>
+                        <td><code>sqlmap -u "[URL/?id=1]" --dbs</code></td>
+                        <td>Automatización de la detección y explotación de vulnerabilidades de inyección SQL.</td>
+                        <td>Seguridad Web</td>
+                    </tr>
+                    <tr>
+                        <td><code>msfconsole</code></td>
+                        <td>Inicia la consola interactiva principal del framework Metasploit para gestión de exploits.</td>
+                        <td>Explotación</td>
+                    </tr>
+                    <tr>
+                        <td><code>nikto -h [URL]</code></td>
+                        <td>Escáner de vulnerabilidades en servidores web para identificar archivos peligrosos y misconfiguraciones.</td>
+                        <td>Seguridad Web</td>
+                    </tr>
+                    <tr>
+                        <td><code>dirb [URL]</code></td>
+                        <td>Escáner de contenidos web para descubrir directorios y archivos ocultos mediante diccionarios.</td>
+                        <td>Seguridad Web</td>
+                    </tr>
+                    <tr>
+                        <td><code>gobuster dir -u [URL] -w [diccionario]</code></td>
+                        <td>Alternativa de alto rendimiento desarrollada en Go para fuerza bruta de directorios y subdominios.</td>
+                        <td>Seguridad Web</td>
+                    </tr>
+                    <tr>
+                        <td><code>hashcat -m 0 -a 0 [hash.txt] [diccionario]</code></td>
+                        <td>Recuperación y descifrado de hashes mediante ataques de diccionario optimizados por GPU.</td>
+                        <td>Criptografía</td>
+                    </tr>
+                    <tr>
+                        <td><code>john [hash.txt]</code></td>
+                        <td>Herramienta multipropósito (John the Ripper) para auditoría y crackeo de contraseñas locales.</td>
+                        <td>Criptografía</td>
+                    </tr>
+                    <tr>
+                        <td><code>nc -lvp [puerto]</code></td>
+                        <td>Netcat en modo escucha para abrir puertos, capturar datos o recibir shells remotas (reverse shell).</td>
+                        <td>Utilidades de Red</td>
+                    </tr>
+                    <tr>
+                        <td><code>searchsploit [término]</code></td>
+                        <td>Buscador en línea de comandos para consultar la base de datos local de exploits (Exploit-DB).</td>
+                        <td>Investigación / Exploit</td>
+                    </tr>
+                    <tr>
+                        <td><code>macchanger -r eth0</code></td>
+                        <td>Modifica de forma aleatoria la dirección MAC física de la tarjeta de red para anonimato.</td>
+                        <td>Anonimato / Redes</td>
+                    </tr>
+                    <tr>
+                        <td><code>ettercap -G</code></td>
+                        <td>Entorno gráfico para ataques de intermediario (Man-in-the-Middle) e interceptación ARP.</td>
+                        <td>Ataques de Red</td>
+                    </tr>
+                    <tr>
+                        <td><code>dnsenum [dominio]</code></td>
+                        <td>Herramienta de enumeración para recopilar información de registros DNS y subdominios.</td>
+                        <td>Reconocimiento</td>
+                    </tr>
+                    <tr>
+                        <td><code>lynis audit system</code></td>
+                        <td>Escáner de auditoría de seguridad defensiva y hardening para sistemas Unix/Linux.</td>
+                        <td>Auditoría Defensiva</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SysWiki - Proyecto de Desarrollo Basado en Plataformas | Universidad Técnica de Manabí</p>
+    </footer>
+
+    <script src="js/codigo.js"></script>
+</body>
+</html>

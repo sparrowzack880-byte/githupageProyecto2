@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SysWiki - Linux</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/lupa 2.jpg" type="image/jpeg">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="img/linuxwindows.webp" alt="Logo SysWiki" class="logo-img">
+            <h1>SysWiki: Repositorio de Comandos</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="linux.html" class="active">Linux</a></li>
+                <li><a href="windows.html">Windows</a></li>
+                <li><a href="kali.html">Kali Linux</a></li>
+                <li><a href="macos.html">macOS</a></li>
+                <li><a href="logs.html">Diagnóstico y Logs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <img src="img/logo linux.png" alt="Logo Linux" class="os-logo">
+            <h2>Linux: Comandos y Administración de Sistemas</h2>
+            <p>Guía de referencia rápida con 20 comandos fundamentales para la gestión de archivos, control de permisos, procesos y redes en entornos Linux.</p>
+        </section>
+
+        <section class="search-section">
+            <form id="search-form">
+                <label for="search-input">Buscar comando de Linux:</label>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Ej. ls, grep, chmod, systemctl, ip...">
+                </div>
+            </form>
+        </section>
+
+        <section class="table-section">
+            <table class="command-table" id="table-commands">
+                <thead>
+                    <tr>
+                        <th scope="col">Comando</th>
+                        <th scope="col">Descripción / Propósito</th>
+                        <th scope="col">Categoría / Uso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>ls -la</code></td>
+                        <td>Lista todos los archivos y carpetas de un directorio de forma detallada, incluyendo archivos ocultos.</td>
+                        <td>Navegación de Archivos</td>
+                    </tr>
+                    <tr>
+                        <td><code>cd [directorio]</code></td>
+                        <td>Cambia el directorio de trabajo actual a la ruta especificada.</td>
+                        <td>Navegación de Archivos</td>
+                    </tr>
+                    <tr>
+                        <td><code>pwd</code></td>
+                        <td>Muestra la ruta absoluta del directorio de trabajo actual en el que te encuentras.</td>
+                        <td>Navegación de Archivos</td>
+                    </tr>
+                    <tr>
+                        <td><code>mkdir [nombre]</code></td>
+                        <td>Crea un nuevo directorio o carpeta en la ruta actual.</td>
+                        <td>Gestión de Archivos</td>
+                    </tr>
+                    <tr>
+                        <td><code>rm -rf [ruta]</code></td>
+                        <td>Elimina de forma recursiva y forzosa un archivo o directorio completo (usar con precaución).</td>
+                        <td>Gestión de Archivos</td>
+                    </tr>
+                    <tr>
+                        <td><code>cp [origen] [destino]</code></td>
+                        <td>Copia archivos o directorios de una ubicación a otra.</td>
+                        <td>Gestión de Archivos</td>
+                    </tr>
+                    <tr>
+                        <td><code>mv [origen] [destino]</code></td>
+                        <td>Mueve o cambia de nombre a archivos y directorios.</td>
+                        <td>Gestión de Archivos</td>
+                    </tr>
+                    <tr>
+                        <td><code>cat [archivo]</code></td>
+                        <td>Muestra en pantalla el contenido completo de un archivo de texto.</td>
+                        <td>Visualización</td>
+                    </tr>
+                    <tr>
+                        <td><code>grep [texto] [archivo]</code></td>
+                        <td>Busca un patrón o cadena de texto específica dentro de uno o varios archivos.</td>
+                        <td>Búsqueda y Filtros</td>
+                    </tr>
+                    <tr>
+                        <td><code>chmod [permisos] [archivo]</code></td>
+                        <td>Modifica los permisos de lectura, escritura y ejecución de un archivo o directorio.</td>
+                        <td>Permisos y Seguridad</td>
+                    </tr>
+                    <tr>
+                        <td><code>chown [usuario:grupo] [archivo]</code></td>
+                        <td>Cambia el propietario y el grupo al que pertenece un archivo o directorio.</td>
+                        <td>Permisos y Seguridad</td>
+                    </tr>
+                    <tr>
+                        <td><code>ps aux</code></td>
+                        <td>Muestra una lista detallada de todos los procesos activos ejecutándose en el sistema.</td>
+                        <td>Gestión de Procesos</td>
+                    </tr>
+                    <tr>
+                        <td><code>top</code> (o <code>htop</code>)</td>
+                        <td>Monitorea en tiempo real el uso de la CPU, la memoria RAM y los procesos del sistema.</td>
+                        <td>Monitoreo del Sistema</td>
+                    </tr>
+                    <tr>
+                        <td><code>kill [PID]</code></td>
+                        <td>Termina un proceso en ejecución haciendo uso de su identificador numérico (PID).</td>
+                        <td>Gestión de Procesos</td>
+                    </tr>
+                    <tr>
+                        <td><code>df -h</code></td>
+                        <td>Muestra el espacio disponible y utilizado en los discos y particiones montadas.</td>
+                        <td>Almacenamiento</td>
+                    </tr>
+                    <tr>
+                        <td><code>du -sh [directorio]</code></td>
+                        <td>Muestra el tamaño total ocupado por un archivo o directorio específico.</td>
+                        <td>Almacenamiento</td>
+                    </tr>
+                    <tr>
+                        <td><code>tar -czvf [archivo.tar.gz] [carpeta]</code></td>
+                        <td>Comprime una carpeta en un archivo tar.gz utilizando el algoritmo gzip.</td>
+                        <td>Compresión</td>
+                    </tr>
+                    <tr>
+                        <td><code>tar -xzvf [archivo.tar.gz]</code></td>
+                        <td>Descomprime y extrae el contenido de un archivo comprimido tar.gz.</td>
+                        <td>Compresión</td>
+                    </tr>
+                    <tr>
+                        <td><code>ip a</code> (o <code>ifconfig</code>)</td>
+                        <td>Muestra las interfaces de red configuradas junto con sus direcciones IP y estados.</td>
+                        <td>Redes</td>
+                    </tr>
+                    <tr>
+                        <td><code>ping [destino]</code></td>
+                        <td>Envía paquetes ICMP para verificar la conectividad de red con un servidor u host.</td>
+                        <td>Redes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SysWiki - Proyecto de Desarrollo Basado en Plataformas | Universidad Técnica de Manabí</p>
+    </footer>
+
+    <script src="js/codigo.js"></script>
+</body>
+</html>

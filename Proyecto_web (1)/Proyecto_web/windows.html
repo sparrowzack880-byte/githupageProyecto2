@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SysWiki - Windows</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/lupa 2.jpg" type="image/jpeg">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="img/linuxwindows.webp" alt="Logo SysWiki" class="logo-img">
+            <h1>SysWiki: Repositorio de Comandos</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="linux.html">Linux</a></li>
+                <li><a href="windows.html" class="active">Windows</a></li>
+                <li><a href="kali.html">Kali Linux</a></li>
+                <li><a href="macos.html">macOS</a></li>
+                <li><a href="logs.html">Diagnóstico y Logs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <img src="img/logo windows.jpg" alt="Logo Windows" class="os-logo" style="max-width: 60px; border-radius: 4px;">
+            <h2>Windows: Comandos de CMD y PowerShell</h2>
+            <p>Guía de referencia rápida con 20 comandos fundamentales para la administración de sistemas, gestión de redes, archivos y diagnóstico en entornos Windows.</p>
+        </section>
+
+        <section class="search-section">
+            <form id="search-form">
+                <label for="search-input">Buscar comando de Windows:</label>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Ej. ipconfig, tasklist, chkdsk, dir, netstat...">
+                </div>
+            </form>
+        </section>
+
+        <section class="table-section">
+            <table class="command-table" id="table-commands">
+                <thead>
+                    <tr>
+                        <th scope="col">Comando</th>
+                        <th scope="col">Descripción / Propósito</th>
+                        <th scope="col">Categoría / Uso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>dir</code></td>
+                        <td>Lista los archivos y directorios contenidos en la carpeta actual.</td>
+                        <td>Navegación de Archivos</td>
+                    </tr>
+                    <tr>
+                        <td><code>cd [directorio]</code></td>
+                        <td>Cambia el directorio de trabajo actual o muestra la ruta en la que te encuentras.</td>
+                        <td>Navegación de Archivos</td>
+                    </tr>
+                    <tr>
+                        <td><code>cls</code></td>
+                        <td>Limpia por completo todo el texto y la pantalla de la consola.</td>
+                        <td>Utilidades de Consola</td>
+                    </tr>
+                    <tr>
+                        <td><code>mkdir [nombre]</code></td>
+                        <td>Crea un nuevo directorio o carpeta en la ruta especificada.</td>
+                        <td>Gestión de Archivos</td>
+                    </tr>
+                    <tr>
+                        <td><code>rmdir /s /q [ruta]</code></td>
+                        <td>Elimina de forma recursiva y silenciosa un directorio completo con todo su contenido.</td>
+                        <td>Gestión de Archivos</td>
+                    </tr>
+                    <tr>
+                        <td><code>copy [origen] [destino]</code></td>
+                        <td>Copia uno o varios archivos de una ubicación a otra.</td>
+                        <td>Gestión de Archivos</td>
+                    </tr>
+                    <tr>
+                        <td><code>move [origen] [destino]</code></td>
+                        <td>Mueve o cambia de nombre a archivos y carpetas dentro del sistema.</td>
+                        <td>Gestión de Archivos</td>
+                    </tr>
+                    <tr>
+                        <td><code>type [archivo]</code></td>
+                        <td>Muestra en pantalla el contenido interno de un archivo de texto.</td>
+                        <td>Visualización</td>
+                    </tr>
+                    <tr>
+                        <td><code>ipconfig /all</code></td>
+                        <td>Muestra la configuración de red detallada de todas las interfaces físicas y virtuales.</td>
+                        <td>Redes</td>
+                    </tr>
+                    <tr>
+                        <td><code>ping [destino]</code></td>
+                        <td>Envía paquetes ICMP para verificar la conectividad de red con un host o servidor.</td>
+                        <td>Redes</td>
+                    </tr>
+                    <tr>
+                        <td><code>tracert [destino]</code></td>
+                        <td>Rastrea la ruta completa y los saltos que siguen los paquetes de red hasta su destino.</td>
+                        <td>Redes</td>
+                    </tr>
+                    <tr>
+                        <td><code>netstat -ano</code></td>
+                        <td>Muestra todas las conexiones de red activas, puertos en escucha y sus PID asociados.</td>
+                        <td>Redes y Puertos</td>
+                    </tr>
+                    <tr>
+                        <td><code>tasklist</code></td>
+                        <td>Muestra una lista completa de todos los procesos y aplicaciones en ejecución.</td>
+                        <td>Gestión de Procesos</td>
+                    </tr>
+                    <tr>
+                        <td><code>taskkill /f /pid [PID]</code></td>
+                        <td>Forzar la finalización de un proceso en ejecución haciendo uso de su identificador (PID).</td>
+                        <td>Gestión de Procesos</td>
+                    </tr>
+                    <tr>
+                        <td><code>systeminfo</code></td>
+                        <td>Muestra información detallada sobre el hardware, versión del sistema operativo y memoria.</td>
+                        <td>Información del Sistema</td>
+                    </tr>
+                    <tr>
+                        <td><code>chkdsk [unidad:] /f /r</code></td>
+                        <td>Analiza el disco en busca de errores lógicos y sectores defectuosos para repararlos.</td>
+                        <td>Almacenamiento</td>
+                    </tr>
+                    <tr>
+                        <td><code>sfc /scannow</code></td>
+                        <td>Escanea y repara automáticamente los archivos del sistema de Windows dañados o corruptos.</td>
+                        <td>Diagnóstico del Sistema</td>
+                    </tr>
+                    <tr>
+                        <td><code>powercfg /energy</code></td>
+                        <td>Genera un reporte detallado sobre el consumo energético e historiales de batería del equipo.</td>
+                        <td>Energía / Hardware</td>
+                    </tr>
+                    <tr>
+                        <td><code>driverquery</code></td>
+                        <td>Muestra una lista con todos los controladores de dispositivos instalados en el sistema.</td>
+                        <td>Controladores</td>
+                    </tr>
+                    <tr>
+                        <td><code>hostname</code></td>
+                        <td>Muestra el nombre asignado actualmente al equipo en la red local.</td>
+                        <td>Configuración de Red</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SysWiki - Proyecto de Desarrollo Basado en Plataformas | Universidad Técnica de Manabí</p>
+    </footer>
+
+    <script src="js/codigo.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SysWiki - Diagnóstico y Logs</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/lupa 2.jpg" type="image/jpeg">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="img/linuxwindows.webp" alt="Logo SysWiki" class="logo-img">
+            <h1>SysWiki: Repositorio de Comandos</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="linux.html">Linux</a></li>
+                <li><a href="windows.html">Windows</a></li>
+                <li><a href="kali.html">Kali Linux</a></li>
+                <li><a href="macos.html">macOS</a></li>
+                <li><a href="logs.html" class="active">Diagnóstico y Logs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <img src="img/linuxwindows.webp" alt="Logo Diagnóstico y Bitácoras" class="os-logo" style="max-width: 70px;">
+            <h2>Diagnóstico, Bitácoras y Salud de Hardware</h2>
+            <p>Guía de herramientas y comandos avanzados para la auditoría de registros del sistema (logs), análisis de salud en discos (S.M.A.R.T.), inventario de componentes y mantenimiento técnico.</p>
+        </section>
+
+        <section class="search-section">
+            <form id="search-form">
+                <label for="search-input">Buscar comando de diagnóstico o logs:</label>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Ej. journalctl, smartctl, lshw, dmesg, tmux...">
+                </div>
+            </form>
+        </section>
+
+        <section class="table-section">
+            <table class="command-table" id="table-commands">
+                <thead>
+                    <tr>
+                        <th scope="col">Comando / Utilidad</th>
+                        <th scope="col">Descripción / Propósito</th>
+                        <th scope="col">Categoría / Uso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>journalctl -xe</code></td>
+                        <td>Muestra los registros (*logs*) de errores recientes y eventos del sistema de manera detallada (systemd).</td>
+                        <td>Bitácoras del Sistema</td>
+                    </tr>
+                    <tr>
+                        <td><code>journalctl -u [servicio]</code></td>
+                        <td>Filtra y despliega únicamente los registros de bitácora generados por un servicio o daemon específico.</td>
+                        <td>Bitácoras del Sistema</td>
+                    </tr>
+                    <tr>
+                        <td><code>smartctl -a /dev/sda</code></td>
+                        <td>Realiza un diagnóstico profundo de la salud del disco duro o SSD mediante la tecnología S.M.A.R.T.</td>
+                        <td>Salud de Almacenamiento</td>
+                    </tr>
+                    <tr>
+                        <td><code>smartctl -t long /dev/sda</code></td>
+                        <td>Ejecuta una prueba de diagnóstico extendida y en segundo plano sobre la superficie del disco.</td>
+                        <td>Salud de Almacenamiento</td>
+                    </tr>
+                    <tr>
+                        <td><code>lshw -short</code></td>
+                        <td>Despliega un inventario resumido y estructurado del hardware del equipo (memoria, CPU, buses).</td>
+                        <td>Inventario de Hardware</td>
+                    </tr>
+                    <tr>
+                        <td><code>lshw -html > hardware.html</code></td>
+                        <td>Exporta un reporte técnico completo en formato HTML con todos los detalles de los componentes físicos.</td>
+                        <td>Inventario de Hardware</td>
+                    </tr>
+                    <tr>
+                        <td><code>dmesg | grep -i error</code></td>
+                        <td>Filtra el búfer de mensajes del kernel para identificar fallos directos de hardware o controladores al iniciar.</td>
+                        <td>Diagnóstico del Kernel</td>
+                    </tr>
+                    <tr>
+                        <td><code>dmesg --level=err,warn</code></td>
+                        <td>Muestra únicamente los mensajes del kernel clasificados como advertencias (*warnings*) y errores críticos.</td>
+                        <td>Diagnóstico del Kernel</td>
+                    </tr>
+                    <tr>
+                        <td><code>tmux new -s sesion_diag</code></td>
+                        <td>Inicia una sesión de terminal persistente y multiplexada para mantener procesos en segundo plano.</td>
+                        <td>Gestión de Sesiones</td>
+                    </tr>
+                    <tr>
+                        <td><code>tmux attach -t sesion_diag</code></td>
+                        <td>Recupera y se reconecta a una sesión de terminal activa que quedó ejecutándose en segundo plano.</td>
+                        <td>Gestión de Sesiones</td>
+                    </tr>
+                    <tr>
+                        <td><code>tail -f /var/log/syslog</code></td>
+                        <td>Monitorea en tiempo real (*live stream*) las nuevas entradas que se escriben en el registro general del sistema.</td>
+                        <td>Monitoreo en Vivo</td>
+                    </tr>
+                    <tr>
+                        <td><code>tail -n 100 /var/log/auth.log</code></td>
+                        <td>Muestra las últimas 100 líneas del registro de autenticación e intentos de inicio de sesión en el equipo.</td>
+                        <td>Auditoría de Seguridad</td>
+                    </tr>
+                    <tr>
+                        <td><code>chkdsk C: /f /r</code></td>
+                        <td>Herramienta de Windows para comprobar errores lógicos en el sistema de archivos y reparar sectores defectuosos.</td>
+                        <td>Diagnóstico Windows</td>
+                    </tr>
+                    <tr>
+                        <td><code>sfc /scannow</code></td>
+                        <td>Escanea y reemplaza automáticamente archivos de sistema de Windows corruptos o dañados.</td>
+                        <td>Diagnóstico Windows</td>
+                    </tr>
+                    <tr>
+                        <td><code>DISM /Online /Cleanup-Image /RestoreHealth</code></td>
+                        <td>Repara la imagen del sistema operativo Windows cuando existen daños profundos en los componentes base.</td>
+                        <td>Diagnóstico Windows</td>
+                    </tr>
+                    <tr>
+                        <td><code>free -h</code></td>
+                        <td>Muestra el uso actual de la memoria RAM y el espacio de intercambio (*swap*) en formato legible.</td>
+                        <td>Rendimiento del Sistema</td>
+                    </tr>
+                    <tr>
+                        <td><code>df -Th</code></td>
+                        <td>Informa el espacio total, usado y disponible en las particiones montadas junto con su tipo de sistema de archivos.</td>
+                        <td>Almacenamiento</td>
+                    </tr>
+                    <tr>
+                        <td><code>uptime</code></td>
+                        <td>Muestra el tiempo exacto que lleva el equipo encendido, el número de usuarios activos y la carga promedio.</td>
+                        <td>Estado del Sistema</td>
+                    </tr>
+                    <tr>
+                        <td><code>systemctl status [servicio]</code></td>
+                        <td>Verifica si un servicio o demonio crítico se encuentra activo, detenido o si presenta fallos de arranque.</td>
+                        <td>Gestión de Servicios</td>
+                    </tr>
+                    <tr>
+                        <td><code>hwinfo --cpu</code></td>
+                        <td>Extrae información sumamente detallada sobre el procesador, arquitectura, caché y capacidades de la CPU.</td>
+                        <td>Inventario de Hardware</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SysWiki - Proyecto de Desarrollo Basado en Plataformas | Universidad Técnica de Manabí</p>
+    </footer>
+
+    <script src="js/codigo.js"></script>
+</body>
+</html>

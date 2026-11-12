@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SysWiki - Repositorio de Comandos y Sistemas</title>
+    <!-- Hoja de estilos externa -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/lupa 2.jpg" type="image/jpeg">
+</head>
+<body>
+
+    <!-- Encabezado principal del sitio -->
+    <header>
+        <div class="logo-container">
+            <img src="img/linuxwindows.webp" alt="Logo SysWiki" class="logo-img">
+            <h1>SysWiki: Repositorio de Comandos</h1>
+        </div>
+        <!-- Barra de navegación semántica actualizada con las 6 vistas del proyecto -->
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="linux.html">Linux</a></li>
+                <li><a href="windows.html">Windows</a></li>
+                <li><a href="kali.html">Kali Linux</a></li>
+                <li><a href="macos.html">macOS</a></li>
+                <li><a href="logs.html">Diagnóstico y Logs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido principal de la página de bienvenida -->
+    <main>
+        <section class="hero-section">
+            <h2>Bienvenido al Sistema de Documentación Multiplataforma</h2>
+            <p>Esta plataforma digital está diseñada para estudiantes de ingeniería, sysadmins y entusiastas de la tecnología. Aquí podrás consultar de manera rápida y estructurada los comandos esenciales para la administración de entornos operativos, ciberseguridad ofensiva, sistemas Unix y diagnóstico avanzado de hardware.</p>
+            
+            <!-- Imagen decorativa con su respectivo texto alternativo (Accesibilidad WCAG) -->
+            <figure>
+                <img src="img/linuxwindows.webp" alt="Vista general del espacio de trabajo técnico y desarrollo de sistemas">
+                <figcaption>Entorno de trabajo y gestión integral de sistemas operativos y redes.</figcaption>
+            </figure>
+        </section>
+
+        <!-- Sección del Formulario interactivo de búsqueda global -->
+        <section class="search-section">
+            <h2>Buscador Rápido de Comandos</h2>
+            <form id="search-form" action="#" method="GET">
+                <label for="search-input">Buscar comando o término técnico:</label>
+                <div class="search-box">
+                    <input type="text" id="search-input" name="q" placeholder="Ej. grep, nmap, smartctl, brew, ipconfig..." required>
+                </div>
+            </form>
+        </section>
+
+        <!-- Sección de acceso directo a los módulos especializados -->
+        <section class="table-section">
+            <h2>Módulos del Repositorio</h2>
+            <p>Selecciona cualquiera de las secciones en la barra de navegación superior o utiliza el buscador para filtrar de forma dinámica entre las más de 100 herramientas documentadas en el proyecto:</p>
+            <ul style="list-style-type: disc; margin-left: 2rem; margin-top: 1rem; line-height: 1.8;">
+                <li><strong>Linux:</strong> Comandos base para la administración de archivos, permisos y procesos en distros de uso general.</li>
+                <li><strong>Windows:</strong> Utilidades y comandos esenciales para CMD y PowerShell.</li>
+                <li><strong>Kali Linux:</strong> Herramientas especializadas en ciberseguridad, hacking ético, escaneo de redes y auditorías.</li>
+                <li><strong>macOS:</strong> Comandos orientados al terminal Unix (Darwin), gestión de paquetes con Homebrew y control de energía.</li>
+                <li><strong>Diagnóstico y Logs:</strong> Bitácoras del sistema, análisis de salud de almacenamiento (S.M.A.R.T.), inventario de hardware y sesiones persistentes (`tmux`).</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 SysWiki - Proyecto de Desarrollo Basado en Plataformas | Universidad Técnica de Manabí</p>
+    </footer>
+
+    <!-- Script externo al final del body para una carga fluida -->
+    <script src="js/codigo.js"></script>
+</body>
+</html>
